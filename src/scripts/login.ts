@@ -6,6 +6,7 @@ export async function test_loginByEmailAndPassword(email: string, password: stri
     const token_res = await _token(login_res.data.auth_hash)
     const {token, u_hash} = token_res.data.data
     console.log('token: ', token, '\nu_hash: ', u_hash, '\nauth_user: ', token_res.data.auth_user)
+    return {token, u_hash}
 }
 
 export async function test_loginByPhoneCode(phone: string) {
